@@ -1,3 +1,10 @@
+/**
+ * 咔咔
+ * 
+ * cron 41 7,9,13 * * *
+ * 
+ */
+
 /*
 咔咔
 下载：https://h5.imkaka.com/fep/fun-kaka/invitation.html?code=PKUTNNC
