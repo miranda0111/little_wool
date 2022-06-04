@@ -5,7 +5,7 @@
 签到+互助，一天40金币
 腾讯视频app->我的->常用功能-福利兑换，捉里面pbaccess.video.qq.com的CK
 放到里，多账号换行或者@或者&隔开
-txspCookie
+export txspCookie
 重写：
 [task_local]
 #腾讯视频-福利中心
