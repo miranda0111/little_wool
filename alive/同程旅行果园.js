@@ -534,23 +534,23 @@ function signin(timeout = 3 * 1000) {
  /**
   * 获取随机诗词
   */
- function poem(timeout = 3 * 1000) {
-     return new Promise((resolve) => {
-         let url = {
-             url: `https://v1.jinrishici.com/all.json`
-         }
-         $.get(url, async (err, resp, data) => {
-             try {
-                 data = JSON.parse(data)
-                 log(`${data.content}  \n————《${data.origin}》${data.author}`);
-             } catch (e) {
-                 log(e, resp);
-             } finally {
-                 resolve()
-             }
-         }, timeout)
-     })
- }
+//  function poem(timeout = 3 * 1000) {
+//      return new Promise((resolve) => {
+//          let url = {
+//              url: `https://v1.jinrishici.com/all.json`
+//          }
+//          $.get(url, async (err, resp, data) => {
+//              try {
+//                  data = JSON.parse(data)
+//                  log(`${data.content}  \n————《${data.origin}》${data.author}`);
+//              } catch (e) {
+//                  log(e, resp);
+//              } finally {
+//                  resolve()
+//              }
+//          }, timeout)
+//      })
+//  }
  
  /**
   * 修改配置文件
