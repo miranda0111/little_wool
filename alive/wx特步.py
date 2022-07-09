@@ -23,7 +23,7 @@
 
 # 特步 -> 添加失败(Validation error, cannot resolve alias "teb")
 
-# 需要手动在定时中添加   task wx特步.py
+# 需要手动在定时中添加   task miranda0111_little_wool/wx特步.py
 
 # ================================= 以下代码不懂不要随便乱动 ====================================
 try:
