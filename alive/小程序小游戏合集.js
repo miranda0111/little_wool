@@ -14,6 +14,26 @@ hostname = minigame.nagagame.net
 
 打开小程序   自动获取ck
 
+小游戏全家桶 并发
+
+支持圈× 青龙 v2p
+
+[rewrite_local]
+cloudData/ver url script-request-header https://kireinasakura.coding.net/p/could/d/there/git/raw/master/xyx.js
+[MITM]
+hostname = minigame.nagagame.net
+
+扫码打开5个小程序   会自动获取ck
+
+手动提现
+
+青龙变量
+export xyxcookie='gameid&openid'  
+
+没有圈×手动抓包的
+https://minigame.nagagame.net/cloudData/ver?链接里面?后全部
+
+@分割
 
 状态为3或以上基本是成功了 偶尔刷不上就打开小程序重新加载一次随便点几下，关闭微信后台后重新运行一次脚本
 
