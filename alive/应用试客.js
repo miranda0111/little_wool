@@ -3,7 +3,7 @@
 https://wx.shike.com/i/UUqhExC 下载链接，应该是只有安卓有这个任务吧？
 shike.com 抓包的域名。。
 抓一个cookie：od的值 
-格式 od=aaaaaaaaaa@od=bbbbbbbbbbbb
+格式 export od=aaaaaaaaaa@od=bbbbbbbbbbbb
 注意：如果是大写的数据，变量填大写！！！！！
 变量 yyskapp   对应账号数据
 一天跑个五次吧。。

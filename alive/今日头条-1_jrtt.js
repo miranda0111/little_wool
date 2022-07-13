@@ -4,7 +4,7 @@
 脚本包含签到，宝箱，看广告，阅读时长奖励。
 抓取域名：toutiaoapi.com 自己找找
 找到Cookie里的 sessionid值就可以。
-变量 jrttckapp   对应账号数据
+变量 export jrttckapp=   对应账号数据
 多账号@分割
 */
 const $ = new Env('今日头条');
