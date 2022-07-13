@@ -236,7 +236,7 @@ class UserInfo {
 				this.id = i
 				await this.tas()
 			}
-			for (let i = 1; i < 3; i++) {
+			for (let i = 1; i <= 5; i++) {
 				this.id = i
 				await this.bagx()
 			}
@@ -283,7 +283,7 @@ class UserInfo {
 			let result = httpResult;
 			if (result.status == 1) {
 				console.log(`账号[${this.name}] 领现金ID ${this.id} 增加至->` + result.info)
-			} else console.log(`账号[${this.name}] 领现金ID ${this.id} ` + result.info)
+			} 
 
 		}
 		catch (e) {
@@ -372,9 +372,9 @@ async function GetRewrite() {
 		console.log(ck)
 		if (userCookie) {
 			if (userCookie.indexOf(ck) == -1) {
-				userCookie = userCookie + '@' + ck
+				userCookie = userCookie + '\n' + ck
 				$.setdata(userCookie, 'zlcookie');
-				ckList = userCookie.split('@')
+				ckList = userCookie.split('\n')
 				$.msg(`获取第${ckList.length}个ck成功: ${ck}`)
 			}
 		}
