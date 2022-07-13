@@ -14,7 +14,7 @@
 
     token 抓 https://growrice.supor.com/rice/backend/public/index.php/api/login/auto-login  的包 , url 后面就是token
     cookie 抓 https://growrice.supor.com/rice/backend/public/index.php/api/users/get-user-info  的包 , header 中有cookie
-    miranda0111_little_wool/wx苏泊尔.py
+    task miranda0111_little_wool/wx苏泊尔.py
 """
 # ================================= 以下代码不懂不要随便乱动 ====================================
 try:
