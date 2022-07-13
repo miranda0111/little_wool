@@ -4,7 +4,7 @@
 软件：青碳行 好像安卓苹果都有，具体自测
 功能：签到、分享、回答问题、收取精力值
 抓包：carbon.lcago.cn 这个域名 请求体 的body部分的 token 和 deviceCoding 只需要值
-变量：export qtxtk='token1&deviceCoding1@token2&deviceCoding2'  多个账号用@或者换行分割 
+变量：export qtxck='token1&deviceCoding1@token2&deviceCoding2'  多个账号用@或者换行分割 
 拉库：ql raw https://raw.githubusercontent.com/LinYuanovo/scripts/main/qtx.js
 抓包之前请先把这些任务都点一下，手动开启一下，不然跑不了
 收益不高，一天一毛 兑换的是 数字人民币 没有的，不知道这是啥的或者嫌少的可以不跑
