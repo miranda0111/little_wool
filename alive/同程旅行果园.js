@@ -7,6 +7,12 @@
  变量格式：export tczs='xxx@xxx '  最好放配置文件，用单引号括起来，如果抓到的跑不了，把\换成\\，不行的话删掉\再试试，多个账号用 @ 或者 换行 分割
  Cron：10 9-14 * * *
 
+https://www.sojson.com/yasuo.html
+转义工具
+抓包时，用原始消息的json值，然后点击上方链接进行转义
+
+
+
  [task_local]
  #同程旅行种树
  10 9-14 * * * https://raw.githubusercontent.com/LinYuanovo/scripts/main/tczs.js, tag=同程旅行种树, enabled=true
