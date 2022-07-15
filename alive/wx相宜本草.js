@@ -8,7 +8,8 @@
  *
  * ========= 青龙--配置文件 =========
  * 变量格式: export xybc_data=' cookie1 @ cookie2 @ cookie3 '   ,多账号用 换行 或 @ 分割
- * 
+ * 抓域名crm.inoherb.com下cokkie里面ut的值填入变量
+ *，CK有效期自测
  */
 
  const { log } = require("console");
