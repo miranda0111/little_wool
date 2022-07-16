@@ -1,6 +1,6 @@
 /*
 海尔智家
-
+app吧？
 活动专区-智慧小屋
 自己捉mps.haiersmarthomes.com的包
 把token和clientId填到haierAccount里，多账号换行隔开
