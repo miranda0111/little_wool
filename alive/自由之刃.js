@@ -10,6 +10,26 @@ v2p 圈×变量  zycookie
 青龙变量
 export zycookie= '手机号1#密码1@手机号2#密码2'
 */
+/*
+
+填入注册后的账号密码  手机号#密码  密码不要带& # 等符号
+
+v2p 圈×变量  zycookie
+
+
+用 @  分割多账户
+例如
+青龙变量
+export zycookie= '手机号1#密码1@手机号2#密码2'
+
+
+多账户玩家
+
+下载游戏打开注册一个账号即可开幸运宝箱 
+
+每开一个幸运宝箱为上级增加0.2元到可提现余额
+
+*/
 const jsname = '自由之刃'
 const $ = Env(jsname)
 let ck = ($.isNode() ? process.env.zycookie : $.getdata('zycookie')) || '';
@@ -63,7 +83,13 @@ async function login(sj, pwd) {
             zyto = result.token
             zyid = result.data.id
             console.log(`${result.msg} 余额：${result.data.user_money} 自由豆 ${result.data.bean}`)
-            await openBlind();
+for (let i=1;i<=2;i++){
+this.x=i
+if(this.x==1)this.m=`普通宝箱`
+if(this.x==2)this.m=`幸运宝箱`
+await openBlind();
+}
+            
         } else {
             console.log(`登录：${result.msg}`)
         }
@@ -77,16 +103,16 @@ async function login(sj, pwd) {
 async function openBlind() {
     try {
         let url = `http://zyzr.xkrvlj.cn:91/home/blind/openBlind?`
-        let body = `&type=1&phone_type=ios`
+        let body = `&type=${this.x}&phone_type=ios`
         let zy = `${zyid}`
         let to = `${zyto}`
         let urlObject = mini(url, zy, to, body)
         await httpRequest('post', urlObject)
         let result = httpResult;
         if (result.code == 1) {
-            console.log(`摇一摇得现金：${result.msg}`)
+            console.log(`\n摇一摇 ${this.m} 得现金：${result.msg}`)
         } else if (result.code=='-20'){
-            console.log(`\n摇一摇得现金：今天已经摇过了`)
+            console.log(`\n摇一摇 ${this.m} 得现金：今天已经摇过了`)
         }
     } catch (e) {
         console.log(e)
