@@ -1,5 +1,5 @@
 /*
-
+https://pic.rmb.bdstatic.com/bjh/625f9d965de2bc0979a52b4670247269.png
 填入注册后的账号密码  手机号#密码  密码不要带& # 等符号
 
 v2p 圈×变量  zycookie
