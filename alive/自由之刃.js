@@ -35,7 +35,6 @@ const $ = Env(jsname)
 let ck = ($.isNode() ? process.env.zycookie : $.getdata('zycookie')) || '';
 let ckArr = []
 let envSplitor = ['@']
-
 !(async () => {
 
     if (typeof $request !== "undefined") {
@@ -44,7 +43,7 @@ let envSplitor = ['@']
         if (!(await checkEnv())) return;
         let i = 0
         for (let account of ckArr) {
-            i+=1
+            i += 1
             console.log(`\n=============账号${i}=============\n`)
             let accounts = account.split('#')
             let sj = accounts[0]
@@ -58,16 +57,16 @@ let envSplitor = ['@']
     .finally(() => $.done())
 
 async function checkEnv() {
-    if(ck) {
-        for(let dt of ck.split('@')) {
-            if(dt) ckArr.push(dt)
+    if (ck) {
+        for (let dt of ck.split('@')) {
+            if (dt) ckArr.push(dt)
         }
     } else {
         console.log('未找到账号数据')
-        if (ckArr.length<1)return;
+        if (ckArr.length < 1) return;
     }
     console.log(`共找到${ckArr.length}个账号`)
-    
+
     return true;
 }
 
@@ -83,13 +82,31 @@ async function login(sj, pwd) {
             zyto = result.token
             zyid = result.data.id
             console.log(`${result.msg} 余额：${result.data.user_money} 自由豆 ${result.data.bean}`)
-for (let i=1;i<=2;i++){
-this.x=i
-if(this.x==1)this.m=`普通宝箱`
-if(this.x==2)this.m=`幸运宝箱`
-await openBlind();
-}
-            
+
+            for (let x = 1; x <= 3; x++) {
+                this.a = x
+                if (this.a == 1) {
+                    this.num = 1
+                    this.o = "提现一元"
+                }
+                if (this.a == 2) {
+                    this.num = 20
+                    this.o = "提现二十元"
+                }
+                if (this.a == 3) {
+                    this.num = 50
+                    this.o = "提现五十元"
+                }
+                await tx()
+            }
+            for (let i = 1; i <= 2; i++) {
+                this.x = i
+                if (this.x == 1) this.m = `普通宝箱`
+                if (this.x == 2) this.m = `幸运宝箱`
+                await openBlind();
+            }
+
+
         } else {
             console.log(`登录：${result.msg}`)
         }
@@ -111,8 +128,28 @@ async function openBlind() {
         let result = httpResult;
         if (result.code == 1) {
             console.log(`\n摇一摇 ${this.m} 得现金：${result.msg}`)
-        } else if (result.code=='-20'){
+        } else if (result.code == '-20') {
             console.log(`\n摇一摇 ${this.m} 得现金：今天已经摇过了`)
+        }
+    } catch (e) {
+        console.log(e)
+    } finally {
+        return new Promise((resolve) => { resolve(1) });
+    }
+}
+async function tx() {
+    try {
+        let url = `http://zyzr.xkrvlj.cn:91/home/user/cash?money=${this.num}`
+        let body = ``
+        let zy = `${zyid}`
+        let to = `${zyto}`
+        let urlObject = mini(url, zy, to, body)
+        await httpRequest('get', urlObject)
+        let result = httpResult;
+        if (result.code == 1) {
+            console.log(`\n开始提现 ${this.o}：${result.msg}`)
+        } else if (result.code !== 0) {
+            console.log(`\n开始提现 ${this.o}：${result.msg}`)
         }
     } catch (e) {
         console.log(e)
@@ -536,4 +573,3 @@ function Env(name, env) {
         }
     }(name, env)
 }
-//
