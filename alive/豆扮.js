@@ -1,5 +1,22 @@
  /*
 
+没有圈×
+抓 api.imdouban.com 域名
+header请求头的
+douban-token 值
+
+
+
+变量名 dbcookie
+
+多账号@分割
+export dbcookie='123@123'
+
+进app 注册账号 我的页面最下方 - 天天零钱 
+
+绑定支付宝账号   每天都会自动提现1-2毛
+提现秒到
+
 
 
 
