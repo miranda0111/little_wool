@@ -70,10 +70,6 @@ async function userinfo(altoken,alid) {
             console.log(jsname + ` 当前金币 ：${this.cash} `)
             await timeMoney(altoken,alid)
         }
-        if (this.cash >= 1000) {
-            console.log(jsname + ` 开始提现 ：${this.cash * 0.0001} 元`)
-            await addMoney(altoken,alid)
-        }
     } catch (e) {
         console.log(e)
     } finally {
