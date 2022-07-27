@@ -23,7 +23,7 @@ SESSION=xxxxxxxx; Path=/; HttpOnly; SameSite=Lax
 
 多账号@分割
 export dlcookie=''
-定时0 */2 * * *
+
 
 脚本地址
 
