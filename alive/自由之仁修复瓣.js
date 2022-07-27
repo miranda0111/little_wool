@@ -25,6 +25,32 @@ export zysigncookie='&eu-stamp=1658238834814&eu-sign=a0b1945da5c4eebece8b4b5534f
 
 
 */
+/*
+
+填入注册后的账号密码  手机号#密码  密码不要带& # 等符号
+
+v2p 圈×变量  zycookie
+
+
+用 @  分割多账户
+例如
+青龙变量
+export zycookie='手机号1#密码1@手机号2#密码2'
+
+
+打开自由之刃app   
+抓网址
+http://zyzr.xkrvlj.cn:91/home/blind/openBlind?
+抓一个摇一摇的  请求体末尾  （默认自带一个我的   不能用  就替换成自己的）
+
+比如请求体是
+&type=2&phone_type=ios&eu-stamp=1658238834814&eu-sign=a0b1945da5c4eebece8b4b5534f8ce2a
+
+对应变量
+export zysigncookie='&eu-stamp=1658238834814&eu-sign=a0b1945da5c4eebece8b4b5534f8ce2a'
+
+
+*/
 const jsname = '自由之刃'
 const $ = Env(jsname)
 let ck = ($.isNode() ? process.env.zycookie : $.getdata('zycookie')) || '';
@@ -147,7 +173,7 @@ async function openBlind() {
             console.log(`\n摇一摇 ${this.m} 得现金：${result.msg}`)
         } else if (result.code == '-20') {
             console.log(`\n摇一摇 ${this.m} 得现金：今天已经摇过了`)
-        }
+        }else console.log(`\n摇一摇 ${this.m} 得现金：`+result.msg)
     } catch (e) {
         console.log(e)
     } finally {
