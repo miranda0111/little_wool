@@ -366,8 +366,8 @@ const _0x4baf = [
   _0x48802d();
   const $ = new Env("快音");
   const notify = $[_0x58e7("0x4c")]() ? require(_0x58e7("0xc5")) : "";
-  const Notify = 0x1;
-  const debug = 0x0;
+  const Notify = 1;
+  const debug = 0;
   let ckStr =
     ($[_0x58e7("0x4c")]()
       ? process[_0x58e7("0x65")][_0x58e7("0x31")]
@@ -394,7 +394,7 @@ const _0x4baf = [
     console.log(_0x58e7("0x27") + Change);
     DoubleLog("" + thank);
     console.log("" + thank);
-    //await wyy();
+    await wyy();
     DoubleLog(_0x58e7("0xc6") + _0x5fe2b3[_0x58e7("0x6a")] + _0x58e7("0x20"));
     console.log(_0x58e7("0xc6") + _0x5fe2b3[_0x58e7("0x6a")] + _0x58e7("0x20"));
     debugLog("【debug】\x20这是你的账号数组:\x0a\x20" + _0x5fe2b3);
