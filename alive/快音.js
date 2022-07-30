@@ -391,12 +391,9 @@ const _0x4baf = [
   let thank = _0x58e7("0xac");
   async function tips(_0x5fe2b3) {
     DoubleLog(_0x58e7("0x27") + Change);
-    console.log(_0x58e7("0x27") + Change);
     DoubleLog("" + thank);
-    console.log("" + thank);
     await wyy();
     DoubleLog(_0x58e7("0xc6") + _0x5fe2b3[_0x58e7("0x6a")] + _0x58e7("0x20"));
-    console.log(_0x58e7("0xc6") + _0x5fe2b3[_0x58e7("0x6a")] + _0x58e7("0x20"));
     debugLog("【debug】\x20这是你的账号数组:\x0a\x20" + _0x5fe2b3);
   }
   !(async () => {
@@ -531,16 +528,8 @@ const _0x4baf = [
                   _0x5e7f54[_0x58e7("0x33")]["continuous_sign_in_days"] +
                   "天"
               );
-              console.log(
-                "签到成功，连续签到：" +
-                  _0x5e7f54[_0x58e7("0x33")]["continuous_sign_in_days"] +
-                  "天"
-              );
             } else {
               DoubleLog(_0x58e7("0xa1") + _0x5e7f54[_0x58e7("0x1a")]);
-              console.log(
-                _0x58e7("0xa1") + _0x5e7f54[_0x58e7("0x1a")]
-              );
             }
           } catch (_0x1fa670) {
           } finally {
