@@ -127,7 +127,7 @@ const _0x4baf = [
   "resolve",
   "setCookieSync",
   "https://api.kaixinyf.cn/passport/get_token",
-  "用户：111",
+  "用户：无名氏",
   "*/*",
   "toString",
   "basename",
