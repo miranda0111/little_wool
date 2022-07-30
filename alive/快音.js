@@ -367,7 +367,7 @@ const _0x4baf = [
   const $ = new Env("快音");
   const notify = $[_0x58e7("0x4c")]() ? require(_0x58e7("0xc5")) : "";
   const Notify = 1;
-  const debug = 0;
+  const debug = 1;
   let ckStr =
     ($[_0x58e7("0x4c")]()
       ? process[_0x58e7("0x65")][_0x58e7("0x31")]
