@@ -11,7 +11,7 @@ cron: 38 11,21 * * *
 青龙：
 捉包把huiyuan.timingmar.com请求里面的access_token填到hyflsCookie里，多账号换行隔开
 
-重写：
+重写1：
 小程序 汇源福利社，授权之后进入抽盲盒活动页面
 [task_local]
 #汇源福利社
