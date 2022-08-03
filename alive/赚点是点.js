@@ -15,7 +15,7 @@ https://json.dd-gz.com/zhuandianshidian/public/api.php/user/userinfo?
 假如末尾是 token=123&userid=456
 
 青龙变量
-export zdcookie='123#456@第二个123#第二个456'
+export zdcookie= '123#456@第二个123#第二个456'
 
 v2p 圈×变量  zdcookie
 */
@@ -70,6 +70,10 @@ async function userinfo(altoken,alid) {
             console.log(jsname + ` 当前金币 ：${this.cash} `)
             await timeMoney(altoken,alid)
         }
+        if (this.cash >= 1000) {
+            console.log(jsname + ` 开始提现 ：${this.cash * 0.0001} 元`)
+            await addMoney(altoken,alid)
+        }
     } catch (e) {
         console.log(e)
     } finally {
@@ -84,8 +88,8 @@ async function addMoney(altoken,alid) {
         await httpRequest('get', urlObject)
         let result = httpResult;
         if (result.state == 1) {
-            console.log(jsname + ` 开始兑换金币 ：${this.cash}`)
-        } else console.log(jsname + ` 开始兑换金币 ：${result.msg}`)
+            console.log(`兑换金币成功`)
+        } 
     } catch (e) {
         console.log(e)
     } finally {
