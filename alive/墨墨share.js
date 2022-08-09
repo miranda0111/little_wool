@@ -1,21 +1,20 @@
 /**
- * 微笑趣泡 
+ * 
  * 
  * ========= 青龙--配置文件 =========
- * 变量格式：  export mmShareLink=''  多个账号用 @分割 
+ * 
  * 
  * 
  * 
  */
- const request = require('request');
  const $ = new Env("墨墨背单词share");
  const notify = $.isNode() ? require('./sendNotify') : '';
  const Notify = 1; //0为关闭通知，1为打开通知,默认为1
  const debug = 0; //0为关闭调试，1为打开调试,默认为0
  
  
- let mmShareLink = ($.isNode() ? process.env.mmShareLink : $.getdata('mmShareLink')) || "";
- let mmShareLinkArr = [];
+ let kakaCookie = ($.isNode() ? process.env.kakaCookie : $.getdata('kakaCookie')) || "";
+ let kakaCookieArr = [];
  let msg = '';
 
  
@@ -38,23 +37,23 @@
          await $.wait(2 * 1000);
  
  
-         $.log(`\n=================== 共找到 ${mmShareLinkArr.length} 个账号 ===================`)
+         $.log(`\n=================== 共找到 ${kakaCookieArr.length} 个账号 ===================`)
  
          if (debug) {
-             console.log(`【debug】 这是你的账号数组:\n ${mmShareLinkArr}`);
+             console.log(`【debug】 这是你的账号数组:\n ${kakaCookieArr}`);
          }
  
          if (debug) {
              console.log(`\n【debug】 这是你的UA数据:\n ${UA}\n`);
          }
  
-         for (let index = 0; index < mmShareLinkArr.length; index++) {
+         for (let index = 0; index < kakaCookieArr.length; index++) {
  
  
              let num = index + 1
              $.log(`\n========= 开始【第 ${num} 个账号】=========\n`)
              msg += `\n【第 ${num} 个账号】`
-             let user_id = mmShareLinkArr[index]
+             let user_id = kakaCookieArr[index]
              if (debug) {
                  console.log(`\n【debug】 这是你第 ${num} 账号信息:\n user_id:${user_id}\n`);
              }
@@ -77,16 +76,16 @@
  //#region 固定代码
  // ============================================变量检查============================================ \\
  async function Envs() {
-     if (mmShareLink) {
-         if (mmShareLink.indexOf("@") != -1) {
-             mmShareLink.split("@").forEach((item) => {
-                 mmShareLinkArr.push(item);
+     if (kakaCookie) {
+         if (kakaCookie.indexOf("@") != -1) {
+             kakaCookie.split("@").forEach((item) => {
+                 kakaCookieArr.push(item);
              });
          } else {
-             mmShareLinkArr.push(mmShareLink);
+             kakaCookieArr.push(kakaCookie);
          }
      } else {
-         $.log(`\n【${$.name}】：未填写变量 mmShareLink`)
+         $.log(`\n【${$.name}】：未填写变量 kakaCookie`)
          return;
      }
  
@@ -154,7 +153,7 @@
  function addLikeRec(timeout = 3 * 1000) {
 	return new Promise((resolve) => {
 		let url = {
-			url: mmShareLink,
+			url: `https://www.maimemo.com/share/page?uid=15249640&pid=bfc5b81d071e8dd59945e54603c4875e&tid=f3a6dbc7a55d1fd023fe18258cfdc12c`,
             headers: {
                 'Host': 'www.maimemo.com',
                 'user-agent': `Mozilla/5.0 (Linux; Android 9; PAR-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Mobile Safari/537.36`
