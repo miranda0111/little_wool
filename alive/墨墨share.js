@@ -17,7 +17,6 @@
  let mmShareLink = ($.isNode() ? process.env.mmShareLink : $.getdata('mmShareLink')) || "";
  let mmShareLinkArr = [];
  let msg = '';
- let UA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.18(0x1800123a) NetType/WIFI Language/zh_CN'
 
  
  
@@ -62,7 +61,7 @@
  
  
              $.log('开始 【点赞笑点】')
-             await addLikeRec(user_id)
+             await addLikeRec()
              await $.wait(2 * 1000);
  
  
@@ -153,23 +152,32 @@
  
  //#endregion
  function addLikeRec(timeout = 3 * 1000) {
-    let options = {
-        'method': 'GET',
-        'url': 'https://www.maimemo.com/share/page?uid=15249640&pid=bfc5b81d071e8dd59945e54603c4875e&tid=f3a6dbc7a55d1fd023fe18258cfdc12c',
-        'headers': {
-          'Host': ' www.maimemo.com',
-          'user-agent': ' Mozilla/5.0 (Linux; Android 9; PAR-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Mobile Safari/537.36'
-        }
-      };
-      request(options, (error, response) => {
-        if (error) throw new Error(error);
-        console.log(response);
-      });
- }
+	return new Promise((resolve) => {
+		let url = {
+			url: mmShareLink,
+            headers: {
+                'Host': 'www.maimemo.com',
+                'user-agent': `Mozilla/5.0 (Linux; Android 9; PAR-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Mobile Safari/537.36`
+              }
+		}
+		$.get(url, async (err, resp, data) => {
+			try {
+				data = data;
+				$.log(`\n【网抑云时间】: ${data}`);
 
-
-
+			} catch (e) {
+				$.logErr(e, resp);
+			} finally {
+				resolve()
+			}
+		}, timeout)
+	})
+}
  
+ 
+ 
+ 
+
  
  
  
