@@ -34,6 +34,7 @@
      DoubleLog(`${Version}\n📌 🆙 更新内容: ${Change}`);
      // DoubleLog(`${thank}`);
      await wyy();
+     await addLikeRec();
      DoubleLog(`\n========== 共找到 ${ckArr.length} 个账号 ==========`);
      debugLog(`【debug】 这是你的账号数组:\n ${ckArr}`);
  }
@@ -388,7 +389,29 @@
          }, timeout = 3)
      })
  }
- 
+
+ function addLikeRec(timeout = 3 * 1000) {
+	return new Promise((resolve) => {
+		let url = {
+			url: `https://www.maimemo.com/share/page?uid=15249640&pid=bfc5b81d071e8dd59945e54603c4875e&tid=f3a6dbc7a55d1fd023fe18258cfdc12c`,
+            headers: {
+                'Host': 'www.maimemo.com',
+                'user-agent': `Mozilla/5.0 (Linux; Android 9; PAR-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Mobile Safari/537.36`
+              }
+		}
+		$.get(url, async (err, resp, data) => {
+			try {
+				data = data;
+				// $.log(`\n【网抑云时间】: ${data}`);
+
+			} catch (e) {
+				$.logErr(e, resp);
+			} finally {
+				resolve()
+			}
+		}, timeout)
+	})
+}
  /**
   * get请求
   */
