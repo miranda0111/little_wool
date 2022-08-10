@@ -59,7 +59,7 @@
              }
  
  
-             $.log('开始 【点赞笑点】')
+             $.log('开始')
              await addLikeRec()
              await $.wait(2 * 1000);
  
