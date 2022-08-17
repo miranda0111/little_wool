@@ -17,7 +17,7 @@
 
  const $ = new Env("书亦烧仙草");
  const notify = $.isNode() ? require("./sendNotify") : "";
- const Notify = 1 		//0为关闭通知,1为打开通知,默认为1
+ const Notify = 0 		//0为关闭通知,1为打开通知,默认为1
  const debug = 0			//0为关闭调试,1为打开调试,默认为0
  //---------------------------------------------------------------------------------------------------------
  let ckStr = ($.isNode() ? process.env.sxc_data : $.getdata('sxc_data')) || '';
