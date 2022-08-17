@@ -8,5 +8,8 @@
 自用拉库，无快手的，别问快手，讨论一律ban
 
 
-拉库
-ql repo https://github.com/miranda0111/little_wool.git "alive" "invalid|only_quantumultX_scripts|danchaofan" "" ""
+拉库 全部拉取
+`ql repo https://github.com/miranda0111/little_wool.git "little_money|little_points" "invalid|danchaofan" "" ""`
+
+拉库 只拉有毛
+`ql repo https://github.com/miranda0111/little_wool.git "little_money" "invalid|danchaofan" "" ""`
