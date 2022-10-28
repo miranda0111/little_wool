@@ -42,7 +42,7 @@ let elmhd = $.getdata('elmhd')
         // if (elmbody) $.setdata(elmbody, `elmbody${status}`)
         // $.log(elmbody)
 
-        $.msg($.name, "", `elm${status}获取${elmurl}成功`)
+        $.msg($.name, "", `elm${status}获取${elmhd}成功`)
 
     }
 }
