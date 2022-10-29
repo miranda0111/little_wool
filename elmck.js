@@ -34,12 +34,11 @@ function elmck() {
         if (elmurl) $.setdata(elmurl, `elmurl${status}`)
         $.log(elmurl)
 
-        const elmhd = JSON.stringify($request.headers)
-        const data = "";
+        const elmhd = JSON.stringify($request.headers.Cookie)
         if (elmhd) $.setdata(elmhd, `elmhd${status}`)
         $.log(elmhd)
      
-        $.msg($.name, "", `elm${status}获取${elmhd}`)
+        $.msg($.name, `\n\n`, `elm${status}${elmhd}`)
 
     }
 }
