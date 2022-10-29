@@ -1,4 +1,4 @@
-const $ = new Env('elm快捷指令获取ck');
+const $ = new Env('elm配合快捷指令获取ck');
 let status;
 
 status = (status = ($.getval("elmstatus") || "1")) > 1 ? `${status}` : "";
