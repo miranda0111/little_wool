@@ -1,3 +1,5 @@
+//重写：https://nt2.ele.me/c/b? url script-request-header https://raw.githubusercontent.com/miranda0111/little_wool/main/elmck.js
+//主机名：nt2.ele.me
 const $ = new Env('elm配合快捷指令获取ck');
 // let status;
 
