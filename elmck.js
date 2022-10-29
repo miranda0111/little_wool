@@ -27,7 +27,7 @@ function elmck() {
         $.log(elmhd)
      
         // $.msg($.name, `\n\n`, `${status}${elmhd}`)
-        $.msg($.name, `\n\n`, `${elmhd}`)
+        $.msg($.name, `\n\n`, `Cookie: ${elmhd}`)
 
     }
 }
