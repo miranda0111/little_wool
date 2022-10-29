@@ -28,19 +28,19 @@ let elmhd = $.getdata('elmhd')
     .catch((e) => $.logErr(e))
     .finally(() => $.done())
 
-    function elmck() {
+function elmck() {
     if ($request.url.indexOf("/c/b?") > -1) {
         const elmurl = $request.url
         if (elmurl) $.setdata(elmurl, `elmurl${status}`)
         $.log(elmurl)
 
         const elmhd = JSON.stringify($request.headers)
-        let data = ''
+        let data = "";
         if (elmhd) $.setdata(elmhd, `elmhd${status}`)
         $.log(elmhd)
         elmhd = JSON.parse(elmhd)
         data = elmhd.Cookie
-        $.msg($.name, "", `${data}`)
+        $.msg($.name, "", `elm${status}获取${data}`)
 
     }
 }
