@@ -1,7 +1,7 @@
 const $ = new Env('elm配合快捷指令获取ck');
-let status;
+// let status;
 
-status = (status = ($.getval("elmstatus") || "1")) > 1 ? `${status}` : "";
+// status = (status = ($.getval("elmstatus") || "1")) > 1 ? `${status}` : "";
 
 let elmurl = $.getdata('elmurl')
 let elmhd = $.getdata('elmhd')
@@ -17,14 +17,17 @@ let elmhd = $.getdata('elmhd')
 function elmck() {
     if ($request.url.indexOf("/c/b?") > -1) {
         const elmurl = $request.url
-        if (elmurl) $.setdata(elmurl, `elmurl${status}`)
+        // if (elmurl) $.setdata(elmurl, `elmurl${status}`)
+        if (elmurl) $.setdata(elmurl, `elmurl`)
         $.log(elmurl)
 
         const elmhd = JSON.stringify($request.headers.Cookie)
-        if (elmhd) $.setdata(elmhd, `elmhd${status}`)
+        // if (elmhd) $.setdata(elmhd, `elmhd${status}`)
+        if (elmhd) $.setdata(elmhd, `elmhd`)
         $.log(elmhd)
      
-        $.msg($.name, `\n\n`, `elm${status}${elmhd}`)
+        // $.msg($.name, `\n\n`, `${status}${elmhd}`)
+        $.msg($.name, `\n\n`, `${elmhd}`)
 
     }
 }
