@@ -35,14 +35,12 @@ let elmhd = $.getdata('elmhd')
         $.log(elmurl)
 
         const elmhd = JSON.stringify($request.headers)
+        let data = ''
         if (elmhd) $.setdata(elmhd, `elmhd${status}`)
         $.log(elmhd)
-
-        // const elmbody = JSON.stringify($request.response)
-        // if (elmbody) $.setdata(elmbody, `elmbody${status}`)
-        // $.log(elmbody)
-
-        $.msg($.name, "", `elm${status}获取${elmhd}成功`)
+        elmhd = JSON.parse(elmhd)
+        data = elmhd.Cookie
+        $.msg($.name, "", `${data}`)
 
     }
 }
