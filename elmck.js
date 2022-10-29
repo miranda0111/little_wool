@@ -3,27 +3,13 @@ let status;
 
 status = (status = ($.getval("elmstatus") || "1")) > 1 ? `${status}` : "";
 
-// const elmurlArr = [], elmhdArr = [], elmbodyArr = [], elmcount = ''
-
 let elmurl = $.getdata('elmurl')
 let elmhd = $.getdata('elmhd')
-// let elmbody = $.getdata('elmbody')
 
 !(async () => {
     if (typeof $request !== "undefined") {
         elmck()
-    } else {
-        // elmurlArr.push($.getdata('elmurl'))
-        // elmhdArr.push($.getdata('elmhd'))
-        // elmbodyArr.push($.getdata('elmbody'))
-        // let elmcount = ($.getval('elmcount') || '1');
-        // for (let i = 2; i <= elmcount; i++) {
-        //     elmurlArr.push($.getdata(`elmurl${i}`))
-        //     elmhdArr.push($.getdata(`elmhd${i}`))
-        //     elmbodyArr.push($.getdata(`elmbody${i}`))
-        // }
-                    }
-    
+    } 
 })()
     .catch((e) => $.logErr(e))
     .finally(() => $.done())
