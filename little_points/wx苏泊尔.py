@@ -319,72 +319,7 @@ def ql_env(name):
 
 
 # 通知服务
-class Msg(object):
-    def __init__(self, m=''):
-        self.str_msg = m
-        self.message()
 
-    # noinspection PyMethodMayBeStatic
-    def get_sendnotify(self):
-        if not os.path.exists("sendNotify.py"):
-            cur_path = os.getcwd()
-            print(f"未找到通知依赖文件,将于脚本执行目录({cur_path})新建:sendNotify.py ")
-            try:
-                url = 'https://raw.gh.fakev.cn/yml2213/Python/master/sendNotify.py'
-                response = requests.get(url)
-                with open('sendNotify.py', "w+", encoding="utf-8") as f:
-                    f.write(response.text)
-            except Exception as err:
-                print(err)
-        else:
-            print("文件已存在,跳过")
-            pass
-        pass
-
-    def message(self):
-        global msg_info
-        print(self.str_msg)
-        try:
-            # msg_info = ''
-            msg_info = f"{msg_info}\n{self.str_msg}"
-        except Exception as err:
-            print(err)
-            msg_info = "{}".format(self.str_msg)
-        sys.stdout.flush()
-        # 这代码的作用就是刷新缓冲区。
-        # 当我们打印一些字符时 ,并不是调用print函数后就立即打印的。一般会先将字符送到缓冲区 ,然后再打印。
-        # 这就存在一个问题 ,如果你想等时间间隔的打印一些字符 ,但由于缓冲区没满 ,不会打印。就需要采取一些手段。如每次打印后强行刷新缓冲区。
-
-    def main(self):
-        global send
-        cur_path = os.getcwd()
-        # print(cur_path)
-        if os.path.exists(cur_path + "/sendNotify.py"):
-            # noinspection PyBroadException
-            try:
-                from sendNotify import send
-            except Exception as err:
-                self.get_sendnotify()
-                print(err)
-                try:
-                    from sendNotify import send
-                except Exception as err:
-                    print(err)
-                    print("加载通知服务失败~")
-        else:
-            self.get_sendnotify()
-            try:
-                from sendNotify import send
-            except Exception as err:
-                print(err)
-                print("加载通知服务失败~")
-
-
-Msg().main()
-
-
-def msg(data):
-    Msg(data)
 
 
 # mac_env(f"{Name_Pinyin}_data")
